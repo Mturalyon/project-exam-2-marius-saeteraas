@@ -1,4 +1,41 @@
-h1 {
-    color: blue;
-    font-family: $font-secondary;
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: $font-primary;
+    background-color: $color-bg;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+//Navigation
+.navbar {
+    background-color: $color-white !important;
+
+    .logo {
+        color: $color-primary !important;
+        font-family: $font-secondary;
+        font-weight: bold;
+    }
+
+    .nav-link:hover {
+        color: $color-primary !important;
+        text-decoration: underline;
+    }
+
+    .dropdown-item:hover {
+        background-color: $color-primary;
+        color: $color-white;
+    }
 }
