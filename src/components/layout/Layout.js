@@ -17,9 +17,9 @@ function Layout() {
     return (
         <>
             <Router>
-                <Navbar bg="light" expand="lg">
+                <Navbar bg="light" expand="lg" sticky="top">
                     <Container>
-                        <Navbar.Brand href="#home" className="logo">Holidaze</Navbar.Brand>
+                        <Navbar.Brand href="/" className="logo">Holidaze</Navbar.Brand>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
                         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
