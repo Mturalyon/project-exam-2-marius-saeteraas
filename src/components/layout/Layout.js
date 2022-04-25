@@ -11,13 +11,14 @@ import Container from 'react-bootstrap/Container';
 
 import Home from "../pages/home/Home";
 import Contact from "../pages/contact/Contact";
+import Footer from "./Footer";
 
 
 function Layout() {
     return (
         <>
             <Router>
-                <Navbar bg="light" expand="lg" sticky="top">
+                <Navbar bg="light" expand="lg">
                     <Container>
                         <Navbar.Brand href="/" className="logo">Holidaze</Navbar.Brand>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -47,6 +48,7 @@ function Layout() {
                     <Route path="/" element={<Home />} />
                     <Route path="/contact" element={<Contact />} />
                 </Routes>
+                <Footer />
             </Router>
         </>
     );

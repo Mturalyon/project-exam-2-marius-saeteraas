@@ -9,6 +9,12 @@ body {
     background-color: $color-bg;
 }
 
+html {
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 80px;
+}
+
 ul {
     list-style: none;
     padding: 0;
@@ -22,6 +28,9 @@ a {
 //Navigation
 .navbar {
     background-color: $color-white !important;
+    position: sticky;
+    top: 0;
+    width: 100%;
 
     .logo {
         color: $color-primary !important;
@@ -41,3 +50,55 @@ a {
 }
 
 //Footer
+footer {
+    background-color: $color-white;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: $color-link-grey;
+    padding: 1rem 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+    .logo-footer {
+        color: $color-primary;
+        font-size: 1.3rem;
+        font-family: $font-secondary;
+        font-weight: bold;
+    }
+
+    .social-container {
+        display: flex;
+        margin: 0;
+    }
+
+    .social-link {
+        font-size: 1.5rem;
+        color: $color-link-grey;
+
+        &:hover {
+            color: $color-primary;
+        }
+    }
+
+    p {
+        margin: 0;
+    }
+}
+
+//Media Queries
+@media only screen and (max-width: 500px) {
+    footer {
+        flex-direction: column;
+        padding: 1.5rem 0;
+
+        .logo-footer {
+            margin-bottom: 1.2rem;
+        }
+
+        .social-container {
+            margin-bottom: 1.2rem;
+        }
+    }
+}
