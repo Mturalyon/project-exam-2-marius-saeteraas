@@ -48,12 +48,15 @@ function HotelSpecific() {
         return <div>{error}</div>
     }
 
+    const description = hotel.description.replace("<p>", "").replace("</p>", "");
+    const address = hotel.short_description.replace("<p>", "").replace("</p>", "");
+
     return (
         <div>
             <h5>{hotel.name}</h5>
             <img src={hotel.images[0].src} alt="Logo" height="300px" />
-            <p>{hotel.description}</p>
-            <p>{hotel.short_description}</p>
+            <p>{description}</p>
+            <p>{address}</p>
             <p>{hotel.prices.price} NOK</p>
             <Link to={`../enquiry/${id}`}>
                 <button>BOOK</button>

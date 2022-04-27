@@ -2,6 +2,9 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 function HotelItem({ id, title, address, image, price }) {
+
+    address = address.replace("<p>", "").replace("</p>", "");
+
     return (
         <Link to={`hotel-specific/${id}`}>
             <img src={image} alt="Logo" height="300px" />
