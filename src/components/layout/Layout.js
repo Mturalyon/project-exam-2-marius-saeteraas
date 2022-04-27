@@ -11,6 +11,11 @@ import Container from 'react-bootstrap/Container';
 
 import Home from "../pages/home/Home";
 import Contact from "../pages/contact/Contact";
+import HotelSpecific from "../pages/hotel-specific/HotelSpecific";
+import Login from "../pages/login/Login";
+import HotelAll from "../pages/hotel-all/HotelAll";
+import Enquiry from "../pages/enquiry/Enquiry";
+
 import Footer from "./Footer";
 
 
@@ -26,9 +31,9 @@ function Layout() {
                         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
                             <Nav>
                                 <Link to="/" className="nav-link">Home</Link>
-                                <Link to="#" className="nav-link">Accommodations</Link>
+                                <Link to="/hotel-all" className="nav-link">Accommodations</Link>
                                 <Link to="/contact" className="nav-link">Contact</Link>
-                                <Link to="#" className="nav-link">Login</Link>
+                                <Link to="/login" className="nav-link">Login</Link>
 
                                 <NavDropdown title="Admin" id="basic-nav-dropdown" className="d-none">
                                     <Link to="#" className="dropdown-item">Admin Panel</Link>
@@ -46,7 +51,12 @@ function Layout() {
 
                 <Routes>
                     <Route path="/" element={<Home />} />
+                    <Route path="/hotel-all" element={<HotelAll />} />
                     <Route path="/contact" element={<Contact />} />
+                    <Route path="/login" element={<Login />} />
+
+                    <Route path="/hotel-specific/:id" element={<HotelSpecific />} />
+                    <Route path="/enquiry/:id" element={<Enquiry />} />
                 </Routes>
                 <Footer />
             </Router>
