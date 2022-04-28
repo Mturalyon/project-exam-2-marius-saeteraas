@@ -1,8 +1,20 @@
+import Header from "./Header";
 import HotelList from "./HotelList";
+import VisitNorway from "./VisitNorway";
+
 
 function Home() {
     return (
-        <HotelList />
+        <>
+            <Header />
+            <main >
+                <div className="wrapper">
+                    <HotelList />
+                </div>
+                <VisitNorway />
+            </main>
+        </>
+
     )
 };
 

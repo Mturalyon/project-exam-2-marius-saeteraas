@@ -1,0 +1,134 @@
+//Home
+header {
+    text-align: center;
+    height: 40vh;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.774), rgba(255, 255, 255, 0.747)), url("../../images/background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: $color-primary;
+    font-weight: bold;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+
+    .cards {
+        margin: 0.5rem 1rem 0.5rem 0;
+        color: $color-text-grey;
+
+        p {
+            margin-bottom: 0.5rem;
+        }
+
+        span {
+            font-weight: bold;
+        }
+
+        h4 {
+            font-size: 1.3rem;
+            transition: all ease-in-out 0.1s;
+        }
+
+        img {
+            width: 350px;
+            height: 300px;
+            border: 2px solid $color-primary;
+            object-fit: cover;
+            box-shadow: 0 6px 8px #88888894;
+            margin-bottom: 0.5rem;
+            position: relative;
+            top: 0;
+            transition: top ease-in-out 0.1s;
+            border-radius: 5px;
+        }
+
+        &:hover {
+            h4 {
+                color: $color-primary;
+                text-decoration: underline;
+            }
+
+            img {
+                top: -7px;
+            }
+        }
+    }
+}
+
+.home-hotel-section {
+    padding: 6rem 0;
+
+    h3 {
+        color: $color-text-grey;
+        font-size: 1.5rem;
+    }
+}
+
+.home-visit-section {
+    text-align: center;
+    background-color: $color-primary;
+    color: $color-white;
+    padding: 6rem 0;
+
+    h2 {
+        margin-bottom: 2rem;
+    }
+
+    img {
+        width: 300px;
+        height: 250px;
+        object-fit: cover;
+        box-shadow: 0 4px 8px #00000094;
+        margin: 0.5rem;
+    }
+
+    .image-container {
+        margin-bottom: 2rem;
+    }
+}
+
+//Media Queries
+@media only screen and (max-width: 800px) {
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+
+        .cards {
+            margin: 1rem 0;
+        }
+    }
+
+    .home-hotel-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .card-container {
+
+        .cards {
+
+            img {
+                width: 270px;
+                height: 250px;
+                margin-bottom: 0.7rem;
+            }
+        }
+    }
+
+    .home-visit-section {
+
+        img {
+            width: 270px;
+            height: 250px;
+        }
+    }
+}

@@ -1,6 +1,7 @@
 import { API } from "../../../constants/api";
 import { useState, useEffect } from "react";
 import HotelItem from "./HotelItem";
+import { Link } from "react-router-dom";
 
 function HotelList() {
     const [hotels, setHotels] = useState([]);
@@ -22,7 +23,7 @@ function HotelList() {
 
             }
             catch (error) {
-                setError(error.toString())
+                setError("An error has occured.")
             }
             finally {
                 setLoading(false);
@@ -32,22 +33,64 @@ function HotelList() {
     }, []);
 
     if (loading) {
-        return <div>Lodaing...</div>
+        return (
+            <>
+                <section className="home-hotel-section">
+                    <h3>Accommodations</h3>
+                    <div className="card-container">
+                        <div className="loader-container flex-mid">
+                            <div class="loader"></div>
+                        </div>
+                    </div>
+                    <div className="flex-mid">
+                        <Link to={`/hotel-all`} className="button">
+                            See More
+                        </Link>
+                    </div>
+                </section>
+
+            </>
+        )
     }
 
     if (error) {
-        return <div>There has ben an error</div>
+        return (
+            <>
+                <section className="home-hotel-section">
+                    <h3>Accommodations</h3>
+                    <div className="card-container">
+                        <div className="loader-container flex-mid">
+                            <p className="error">{error}</p>
+                        </div>
+                    </div>
+                    <div className="flex-mid">
+                        <Link to={`/hotel-all`} className="button">
+                            See More
+                        </Link>
+                    </div>
+                </section>
+
+            </>
+        )
     }
 
     return (
-        <>
-            {hotels.map(function (hotel) {
-                const { id, name, short_description } = hotel;
-                const { src } = hotel.images[0];
-                const { price } = hotel.prices;
-                return <HotelItem key={id} id={id} title={name} address={short_description} image={src} price={price} />
-            })}
-        </>
+        <section className="home-hotel-section">
+            <h3>Accommodations</h3>
+            <div className="card-container">
+                {hotels.map(function (hotel) {
+                    const { id, name, short_description } = hotel;
+                    const { src } = hotel.images[0];
+                    const { price } = hotel.prices;
+                    return <HotelItem key={id} id={id} title={name} address={short_description} image={src} price={price} />
+                })}
+            </div>
+            <div className="flex-mid">
+                <Link to={`/hotel-all`} className="button">
+                    See More
+                </Link>
+            </div>
+        </section>
     )
 }
 

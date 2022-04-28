@@ -6,11 +6,11 @@ function HotelItem({ id, title, address, image, price }) {
     address = address.replace("<p>", "").replace("</p>", "");
 
     return (
-        <Link to={`hotel-specific/${id}`}>
-            <img src={image} alt="Logo" height="300px" />
-            <h5>{title}</h5>
+        <Link to={`hotel-specific/${id}`} className="cards">
+            <img src={image} alt="display of the accommodation" />
+            <h4>{title}</h4>
             <p>{address}</p>
-            <p>{price} NOK: Per Night</p>
+            <p><span>{price}</span> NOK: Per Night</p>
         </Link>
     );
 }
