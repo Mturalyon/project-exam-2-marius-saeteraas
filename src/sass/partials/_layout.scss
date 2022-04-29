@@ -93,8 +93,62 @@ header {
     }
 }
 
+.typedown-label {
+    position: relative;
+    top: -20px;
+    display: flex;
+    flex-direction: column;
+
+    .typedown-wrapper {
+        width: 18rem;
+    }
+
+    input {
+        margin-right: 0.5rem;
+        border: 2px solid $color-primary;
+        padding: 0.3rem;
+        border-radius: 5px;
+        width: 100%;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    .social-link {
+        color: $color-white;
+        background-color: $color-primary;
+        font-size: 1.5rem;
+        padding-right: 0.5rem;
+    }
+
+    .typedown-bg {
+        background-color: $color-primary;
+        display: flex;
+        align-items: center;
+        box-shadow: 0 3px 6px #88888894;
+    }
+
+    .typedown-link {
+        display: block;
+        padding: 0.4rem 0.5rem;
+        background-color: $color-white;
+        border-right: 2px solid $color-primary;
+        border-left: 2px solid $color-primary;
+        border-bottom: 2px solid $color-primary;
+
+        &:hover {
+            color: $color-primary;
+            background-color: rgb(250, 250, 250);
+            text-decoration: underline;
+        }
+    }
+}
+
 //Media Queries
 @media only screen and (max-width: 800px) {
+
+    //Home
     .card-container {
         flex-direction: column;
         align-items: center;
@@ -112,6 +166,8 @@ header {
 }
 
 @media only screen and (max-width: 500px) {
+
+    //Home
     .card-container {
 
         .cards {
@@ -131,4 +187,11 @@ header {
             height: 250px;
         }
     }
+
+    .typedown-label {
+        .typedown-wrapper {
+            width: 15rem;
+        }
+    }
+
 }

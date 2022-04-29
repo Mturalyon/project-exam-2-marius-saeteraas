@@ -19,11 +19,11 @@ function HotelList() {
                 }
                 else {
                     setError("An error has occured.");
-                }
+                };
 
             }
             catch (error) {
-                setError("An error has occured.")
+                setError("An error has occured.");
             }
             finally {
                 setLoading(false);
@@ -39,7 +39,7 @@ function HotelList() {
                     <h3>Accommodations</h3>
                     <div className="card-container">
                         <div className="loader-container flex-mid">
-                            <div class="loader"></div>
+                            <div className="loader"></div>
                         </div>
                     </div>
                     <div className="flex-mid">
@@ -72,7 +72,7 @@ function HotelList() {
 
             </>
         )
-    }
+    };
 
     return (
         <section className="home-hotel-section">
@@ -92,7 +92,7 @@ function HotelList() {
             </div>
         </section>
     )
-}
+};
 
 export default HotelList;
 

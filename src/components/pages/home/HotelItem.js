@@ -13,7 +13,7 @@ function HotelItem({ id, title, address, image, price }) {
             <p><span>{price}</span> NOK: Per Night</p>
         </Link>
     );
-}
+};
 
 HotelItem.propTypes = {
     id: PropTypes.number.isRequired,
