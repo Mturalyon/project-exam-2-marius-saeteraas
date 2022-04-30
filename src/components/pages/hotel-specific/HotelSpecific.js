@@ -42,25 +42,39 @@ function HotelSpecific() {
     }, [url]);
 
     if (loading) {
-        return <div>Loading..</div>
+        return (
+            <div className="loader-container flex-mid">
+                <div className="loader"></div>
+            </div>
+        )
     }
     if (error) {
-        return <div>{error}</div>
+        return (
+            <div className="loader-container flex-mid">
+                <p className="error">{error}</p>
+            </div>
+        )
     }
 
     const description = hotel.description.replace("<p>", "").replace("</p>", "");
     const address = hotel.short_description.replace("<p>", "").replace("</p>", "");
 
     return (
-        <div>
-            <h5>{hotel.name}</h5>
-            <img src={hotel.images[0].src} alt="Logo" height="300px" />
-            <p>{description}</p>
-            <p>{address}</p>
-            <p>{hotel.prices.price} NOK</p>
-            <Link to={`../enquiry/${id}`}>
-                <button>BOOK</button>
-            </Link>
+        <div className="wrapper">
+            <main className="hotel-specific-main">
+                <h2>{hotel.name}</h2>
+                <div>
+                    <img src={hotel.images[0].src} alt="Logo" height="300px" />
+                    <div>
+                        <p>{description}</p>
+                        <p>{address}</p>
+                        <p>{hotel.prices.price} NOK</p>
+                    </div>
+                    <Link to={`../enquiry/${id}`}>
+                        <button>BOOK</button>
+                    </Link>
+                </div>
+            </main>
         </div>
     )
 }

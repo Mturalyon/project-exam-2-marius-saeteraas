@@ -145,6 +145,62 @@ header {
     }
 }
 
+//Hotel All
+.plate-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.plate {
+    background-color: $color-primary;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    display: flex;
+    color: $color-white;
+    box-shadow: 0 4px 8px #4747477a;
+
+
+
+    .plate-info {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        div {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        span {
+            font-weight: bold;
+        }
+
+        h4 {
+            font-size: 1.3rem;
+            margin: 0;
+        }
+    }
+
+    img {
+        width: 200px;
+        height: 150px;
+        object-fit: cover;
+        box-shadow: 0 4px 8px #00000094;
+        margin-right: 1rem;
+    }
+
+    .plate-button {
+        align-self: center;
+        padding: 0.8rem 3rem;
+        margin-right: 2rem;
+    }
+}
+
 //Media Queries
 @media only screen and (max-width: 800px) {
 
@@ -162,6 +218,35 @@ header {
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+
+    //Hotel Alll
+    .plate {
+        flex-direction: column;
+
+        .plate-info {
+            flex-direction: column;
+
+            p {
+                margin-bottom: 1rem;
+            }
+
+            h4 {
+                margin-bottom: 1rem;
+            }
+        }
+
+        img {
+            width: 250px;
+            margin-right: 0;
+            margin-bottom: 1rem;
+        }
+
+        .plate-button {
+            width: 100%;
+            margin-right: 0;
+            text-align: center;
+        }
     }
 }
 
@@ -191,6 +276,14 @@ header {
     .typedown-label {
         .typedown-wrapper {
             width: 15rem;
+        }
+    }
+
+    //Hotel All
+    .plate {
+
+        img {
+            width: 220px;
         }
     }
 

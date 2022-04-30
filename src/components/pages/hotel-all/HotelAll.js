@@ -1,6 +1,12 @@
+import HotelAllList from "./HotelAllList";
+
 function HotelAll() {
     return (
-        <div>All Hotels</div>
+        <main>
+            <div className="wrapper">
+                <HotelAllList />
+            </div>
+        </main>
     )
 }
 
