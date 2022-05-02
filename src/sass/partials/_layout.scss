@@ -201,7 +201,101 @@ header {
     }
 }
 
+//Hotel Specific
+.specific-wrapper {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.hotel-specific-main {
+    padding: 4rem 0;
+    color: $color-text-grey;
+
+    .hotel-specific-content {
+        display: flex;
+    }
+
+    .hotel-specific-flex {
+        width: 100%;
+        justify-content: space-between;
+        display: flex;
+
+        .specific-button {
+            align-self: center;
+            padding: 0.8rem 3rem;
+            margin-right: 2rem;
+        }
+    }
+
+    .hotel-specific-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    .specific-description {
+        padding: 1rem 2rem 1rem 0;
+        flex: 2;
+    }
+
+    .specific-address {
+        text-decoration: underline;
+    }
+
+    img {
+        margin-right: 1rem;
+        height: 300px;
+        object-fit: cover;
+        box-shadow: 0 4px 8px #00000094;
+    }
+
+    span {
+        font-weight: bold;
+    }
+}
+
+//Login Form
+.form-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 86vh;
+    position: relative;
+}
+
 //Media Queries
+@media only screen and (max-width: 1200px) {
+
+    //Hotel Specific
+    .specific-wrapper {
+        width: 90%;
+    }
+
+    .hotel-specific-main {
+        .hotel-specific-flex {
+            flex-direction: column;
+
+            .specific-button {
+                align-self: flex-start;
+                padding: 0.8rem 3rem;
+                margin-right: 2rem;
+            }
+        }
+
+        .specific-description {
+            padding: 1rem 0 1rem 0;
+        }
+    }
+}
+
 @media only screen and (max-width: 800px) {
 
     //Home
@@ -246,6 +340,18 @@ header {
             width: 100%;
             margin-right: 0;
             text-align: center;
+        }
+    }
+
+    //Hotel Specific
+    .hotel-specific-main {
+        .hotel-specific-content {
+            flex-direction: column;
+        }
+
+        img {
+            margin-right: 0;
+            margin-bottom: 1rem;
         }
     }
 }

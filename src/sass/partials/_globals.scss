@@ -166,6 +166,75 @@ footer {
     margin: 0 auto;
 }
 
+//forms
+.form-background {
+    background-image: linear-gradient(to bottom, rgba(255, 254, 254, 0.7) 0%, rgba(255, 255, 255, 0.7) 100%), url("../../images/background.jpg");
+    height: 250px;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    top: 300px;
+    z-index: -1;
+}
+
+form {
+    background-color: $color-white;
+    border: 2px solid $color-primary;
+    padding: 2rem 3rem 3rem 3rem;
+    width: 30rem;
+    color: $color-text-grey;
+    box-shadow: 0 6px 10px #88888894;
+
+    h2 {
+        color: $color-primary;
+        font-weight: bold;
+    }
+
+    fieldset {
+        margin-top: 1.5rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 1rem;
+        font-weight: bold;
+    }
+
+    input {
+        border-radius: 5px;
+        border: 1px solid $color-primary;
+        display: block;
+        width: 100%;
+        padding: 0.5rem;
+        box-shadow: 0 3px 6px #88888894;
+
+        &:focus {
+            outline: 1px solid $color-primary;
+        }
+    }
+
+    button {
+        border: none;
+        margin: 3rem 0 0 0 !important;
+    }
+
+    .form-error {
+        color: $color-warning-red;
+        font-weight: normal;
+    }
+
+    .invalid-error {
+        text-align: center;
+        color: $color-warning-red;
+        margin-top: 1rem;
+        text-decoration: underline;
+    }
+}
+
 @keyframes spin {
     0% {
         transform: rotate(0deg);
@@ -173,6 +242,13 @@ footer {
 
     100% {
         transform: rotate(360deg);
+    }
+}
+
+//Media Queries Height
+@media only screen and (max-height: 700px) {
+    .form-background {
+        top: 180px;
     }
 }
 
@@ -197,5 +273,10 @@ footer {
 
     .wrapper {
         width: 98%;
+    }
+
+    //Forms
+    form {
+        padding: 2rem 1rem 3rem 1rem;
     }
 }

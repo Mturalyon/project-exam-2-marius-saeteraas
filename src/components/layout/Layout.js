@@ -2,7 +2,7 @@ import {
     BrowserRouter as Router,
     Routes,
     Route,
-    Link
+    Link,
 } from "react-router-dom";
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Navbar from 'react-bootstrap/Navbar';
@@ -16,10 +16,20 @@ import Login from "../pages/login/Login";
 import HotelAll from "../pages/hotel-all/HotelAll";
 import Enquiry from "../pages/enquiry/Enquiry";
 
+import Admin from "../admin-pages/admin/Admin";
+
 import Footer from "./Footer";
+import AuthContext from "../../context/AuthContext";
+import { useContext } from "react";
 
 
 function Layout() {
+    const [auth, setAuth] = useContext(AuthContext);
+
+    function logout() {
+        setAuth(null);
+    };
+
     return (
         <>
             <Router>
@@ -33,16 +43,22 @@ function Layout() {
                                 <Link to="/" className="nav-link">Home</Link>
                                 <Link to="/hotel-all" className="nav-link">Accommodations</Link>
                                 <Link to="/contact" className="nav-link">Contact</Link>
-                                <Link to="/login" className="nav-link">Login</Link>
 
-                                <NavDropdown title="Admin" id="basic-nav-dropdown" className="d-none">
-                                    <Link to="#" className="dropdown-item">Admin Panel</Link>
-                                    <NavDropdown.Divider />
-                                    <Link to="#" className="dropdown-item">Manage</Link>
-                                    <Link to="#" className="dropdown-item">Create</Link>
-                                    <Link to="#" className="dropdown-item">Enquiries</Link>
-                                    <Link to="#" className="dropdown-item">Messages</Link>
-                                </NavDropdown>
+                                {auth ? (
+                                    <>
+                                        <Link to="#" className="nav-link" onClick={logout}>Log Out</Link>
+                                        <NavDropdown title="Admin" id="basic-nav-dropdown">
+                                            <Link to="/admin" className="dropdown-item">Admin Panel</Link>
+                                            <NavDropdown.Divider />
+                                            <Link to="#" className="dropdown-item">Manage</Link>
+                                            <Link to="#" className="dropdown-item">Create</Link>
+                                            <Link to="#" className="dropdown-item">Enquiries</Link>
+                                            <Link to="#" className="dropdown-item">Messages</Link>
+                                        </NavDropdown>
+                                    </>
+
+                                ) : (<Link to="/login" className="nav-link">Login</Link>
+                                )}
                             </Nav>
                         </Navbar.Collapse>
 
@@ -57,6 +73,8 @@ function Layout() {
 
                     <Route path="/hotel-specific/:id" element={<HotelSpecific />} />
                     <Route path="/enquiry/:id" element={<Enquiry />} />
+
+                    <Route path="/admin" element={<Admin />} />
                 </Routes>
                 <Footer />
             </Router>

@@ -1,11 +1,14 @@
 import './sass/styles.scss';
 import Layout from './components/layout/Layout';
+import { AuthProvider } from "./context/AuthContext";
 
 
 function App() {
   return (
     <>
-      <Layout />
+      <AuthProvider>
+        <Layout />
+      </AuthProvider>
     </>
   );
 }
