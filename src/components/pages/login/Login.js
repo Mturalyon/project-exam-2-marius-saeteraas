@@ -56,7 +56,7 @@ function Login() {
 
                     <label>
                         Password
-                        <input {...register("password")} name="password" placeholder="Password.." />
+                        <input {...register("password")} type="password" name="password" placeholder="Password.." />
                         {errors.password && <FormError>{errors.password.message}</FormError>}
                     </label>
 

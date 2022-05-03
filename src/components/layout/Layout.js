@@ -20,6 +20,11 @@ import HotelAll from "../pages/hotel-all/HotelAll";
 import Enquiry from "../pages/enquiry/Enquiry";
 //Admin Page
 import Admin from "../admin-pages/admin/Admin";
+import ManageHotels from "../admin-pages/manage-hotels/ManageHotels";
+import CreateHotel from "../admin-pages/create-hotel/CreateHotel";
+import AllEnquiries from "../admin-pages/all-enquiries/AllEnquiries";
+import AllMessages from "../admin-pages/all-messages/AllMessages";
+import ManageSpecific from "../admin-pages/manage-specific/ManageSpecific";
 //Component
 import Footer from "./Footer";
 
@@ -55,10 +60,10 @@ function Layout() {
                                     <NavDropdown title="Admin" id="basic-nav-dropdown">
                                         <Link to="/admin" className="dropdown-item">Admin Panel</Link>
                                         <NavDropdown.Divider />
-                                        <Link to="#" className="dropdown-item">Manage</Link>
-                                        <Link to="#" className="dropdown-item">Create</Link>
-                                        <Link to="#" className="dropdown-item">Enquiries</Link>
-                                        <Link to="#" className="dropdown-item">Messages</Link>
+                                        <Link to="/manage" className="dropdown-item">Manage</Link>
+                                        <Link to="/create" className="dropdown-item">Create</Link>
+                                        <Link to="/all-enquiries" className="dropdown-item">Enquiries</Link>
+                                        <Link to="/all-messages" className="dropdown-item">Messages</Link>
                                     </NavDropdown>
                                 </>
 
@@ -80,6 +85,12 @@ function Layout() {
                 <Route path="/enquiry/:id" element={<Enquiry />} />
 
                 <Route path="/admin" element={<Admin />} />
+                <Route path="/manage" element={<ManageHotels />} />
+                <Route path="/create" element={<CreateHotel />} />
+                <Route path="/all-enquiries" element={<AllEnquiries />} />
+                <Route path="/all-messages" element={<AllMessages />} />
+
+                <Route path="/manage-specific/:id" element={<ManageSpecific />} />
             </Routes>
             <Footer />
         </>

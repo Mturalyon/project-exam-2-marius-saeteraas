@@ -271,6 +271,28 @@ header {
     position: relative;
 }
 
+//Manage Hotels
+.manage-plate {
+    position: relative;
+    top: 0;
+    transition: all ease-in-out 0.1s;
+
+    &:hover {
+        top: -5px;
+        background-color: $color-primary-hover;
+        color: $color-white;
+
+        h4 {
+            text-decoration: underline;
+        }
+    }
+
+    .manage-info {
+        padding: 0 3rem;
+    }
+}
+
+
 //Media Queries
 @media only screen and (max-width: 1200px) {
 
@@ -390,6 +412,13 @@ header {
 
         img {
             width: 220px;
+        }
+    }
+
+    //Manage Hotels
+    .manage-plate {
+        .manage-info {
+            padding: 0 1.5rem;
         }
     }
 
