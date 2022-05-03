@@ -5,6 +5,7 @@ import { useState, useContext } from "react";
 import axios from "axios";
 import { TOKEN_API } from "../../../constants/api";
 import FormError from "./FormError";
+import { useNavigate } from "react-router-dom";
 
 import AuthContext from "../../../context/AuthContext";
 
@@ -22,6 +23,7 @@ function Login() {
     });
 
     const [auth, setAuth] = useContext(AuthContext)
+    const navigate = useNavigate();
 
     async function onSubmit(data) {
         setSubmitting(true);
@@ -29,11 +31,10 @@ function Login() {
 
         try {
             const response = await axios.post(TOKEN_API, data);
-            console.log(response.data.data);
             setAuth(response.data.data);
+            navigate("/admin");
         }
         catch (error) {
-            console.log(error)
             setLoginError("Invalid Login Credentials");
         }
         finally {
