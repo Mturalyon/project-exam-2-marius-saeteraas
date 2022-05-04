@@ -8,8 +8,6 @@ function HotelSpecific() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    let approvedImage = "";
-
     let history = useNavigate();
 
     const { id } = useParams();
@@ -62,18 +60,17 @@ function HotelSpecific() {
     const description = hotel.description.replace("<p>", "").replace("</p>", "");
     const address = hotel.short_description.replace("<p>", "").replace("</p>", "");
 
-    if (!hotel.images[0]) {
-        approvedImage = "https://images.unsplash.com/photo-1517840901100-8179e982acb7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80";
-    } else {
-        approvedImage = hotel.images[0].src;
-    }
-
     return (
         <div className="specific-wrapper">
             <main className="hotel-specific-main">
                 <h2>{hotel.name}</h2>
                 <div className="hotel-specific-content">
-                    <img src={approvedImage} alt="scenery of accommodation" />
+
+                    <img src={hotel.sku} onError={({ currentTarget }) => {
+                        currentTarget.onerror = null;
+                        currentTarget.src = "https://images.unsplash.com/photo-1517840901100-8179e982acb7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80";
+                    }} alt="display of accommodation" />
+
                     <div className="hotel-specific-flex">
                         <div className="hotel-specific-info">
                             <p className="specific-address">{address}</p>

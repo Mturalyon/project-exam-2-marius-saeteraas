@@ -8,8 +8,6 @@ function HotelList() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    let approvedImage = "";
-
     useEffect(function () {
         async function fetchData() {
             try {
@@ -81,17 +79,9 @@ function HotelList() {
             <h3>Accommodations</h3>
             <div className="card-container">
                 {hotels.map(function (hotel) {
-                    const { id, name, short_description } = hotel;
+                    const { id, name, short_description, sku } = hotel;
                     const { price } = hotel.prices;
-
-                    if (!hotel.images[0]) {
-                        approvedImage = "https://images.unsplash.com/photo-1517840901100-8179e982acb7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80";
-                    } else {
-                        const { src } = hotel.images[0];
-                        approvedImage = src;
-                    }
-
-                    return <HotelItem key={id} id={id} title={name} address={short_description} image={approvedImage} price={price} />
+                    return <HotelItem key={id} id={id} title={name} address={short_description} image={sku} price={price} />
                 })}
             </div>
             <div className="flex-mid">

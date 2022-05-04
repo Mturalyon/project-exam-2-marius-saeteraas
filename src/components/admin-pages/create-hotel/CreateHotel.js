@@ -11,6 +11,7 @@ const schema = yup.object().shape({
     short_description: yup.string().required("Please enter an address").min(4, "Minimum 4 characters"),
     regular_price: yup.string().required("Please enter a price per night"),
     description: yup.string().required("Please describe your accommodation").min(4, "Minimum 4 characters"),
+    sku: yup.string().url("Please enter a valid url").required("Please enter image url"),
 });
 
 function CreateHotel() {
@@ -28,19 +29,11 @@ function CreateHotel() {
         setSubmitting(true);
         setServerError(null);
 
-        data.images = [
-            {
-                src: data.slug,
-            }
-        ]
-
-        console.log(data);
-
         try {
             const response = await http.post("wc/v3/products", data);
             console.log(response.data)
 
-            //navigate("/admin");
+            navigate("/manage");
         }
         catch (error) {
             setServerError("There has ben an error: " + error);
@@ -76,7 +69,8 @@ function CreateHotel() {
 
                     <label>
                         Image
-                        <input {...register("slug")} name="slug" placeholder="Image URL.." />
+                        <input {...register("sku")} name="sku" placeholder="Image URL.." />
+                        {errors.sku && <FormError>{errors.sku.message}</FormError>}
                     </label>
 
                     <label>
