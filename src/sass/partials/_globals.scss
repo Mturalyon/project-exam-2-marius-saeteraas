@@ -204,7 +204,8 @@ form {
         font-weight: bold;
     }
 
-    input {
+    input,
+    textarea {
         border-radius: 5px;
         border: 1px solid $color-primary;
         display: block;
