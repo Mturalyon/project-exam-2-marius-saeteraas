@@ -26,19 +26,19 @@ export default function DeleteButton({ id }) {
     function cancelDeleteThis() {
         setCancelDelete(true);
         setAlertdelete(false);
-    }
+    };
 
     function alertDeleteThis() {
         setCancelDelete(false);
         setAlertdelete(true);
-    }
+    };
 
 
     if (cancelDelete) {
         return (
             <button className="button button-red delete-button" onClick={alertDeleteThis}>{error ? "Error" : "Delete"}</button>
         )
-    }
+    };
 
     if (alertDelete) {
         return (
@@ -50,11 +50,11 @@ export default function DeleteButton({ id }) {
                 </div>
             </div>
         )
-    }
+    };
 
     //
 
     return (
         <button className="button button-red delete-button" onClick={alertDeleteThis}>{error ? "Error" : "Delete"}</button>
     )
-}
+};
