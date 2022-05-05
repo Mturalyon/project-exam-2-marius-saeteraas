@@ -68,8 +68,15 @@ function ManageList() {
             <h3>Manage Accommodations</h3>
             <div className="plate-container">
                 {hotels.map(function (hotel) {
-                    const { id, name, short_description } = hotel;
-                    return <ManageItem key={id} id={id} title={name} address={short_description} />
+
+                    if (hotel.categories[0].name === "hotel") {
+                        const { id, name, short_description } = hotel;
+                        return <ManageItem key={id} id={id} title={name} address={short_description} />
+                    }
+                    else {
+                        return null;
+                    }
+
                 })}
             </div>
         </section>

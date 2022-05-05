@@ -79,9 +79,16 @@ function HotelList() {
             <h3>Accommodations</h3>
             <div className="card-container">
                 {hotels.map(function (hotel) {
-                    const { id, name, short_description, sku } = hotel;
-                    const { price } = hotel.prices;
-                    return <HotelItem key={id} id={id} title={name} address={short_description} image={sku} price={price} />
+                    if (hotel.categories[0].name === "hotel") {
+
+                        const { id, name, short_description, sku } = hotel;
+                        const { price } = hotel.prices;
+                        return <HotelItem key={id} id={id} title={name} address={short_description} image={sku} price={price} />
+
+                    }
+                    else {
+                        return null;
+                    }
                 })}
             </div>
             <div className="flex-mid">

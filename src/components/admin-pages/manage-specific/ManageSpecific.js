@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import FormError from "../../pages/login/FormError";
@@ -34,7 +34,13 @@ function ManageSpecific() {
 
     const http = useAxios();
 
+    let history = useNavigate();
+
     let { id } = useParams();
+
+    if (!id) {
+        history("/manage");
+    }
 
     const url = `wc/v3/products/${id}`;
 
@@ -63,9 +69,8 @@ function ManageSpecific() {
         setUpdated(false);
 
         try {
-            const response = await http.put(url, data);
+            await http.put(url, data);
             setUpdated(true);
-            console.log(response);
         }
         catch (error) {
             setUpdateError("An error has occured");
@@ -108,51 +113,58 @@ function ManageSpecific() {
         )
     }
 
-    return (
-        <main className="form-main">
-            <div className="form-background"></div>
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <h2>Manage</h2>
-                <fieldset disabled={updatingHotel}>
-                    <label>
-                        Name
-                        <input {...register("name")} name="name" placeholder="Name of Accommodation.." defaultValue={hotel.name} />
-                        {errors.name && <FormError>{errors.name.message}</FormError>}
-                    </label>
+    if (hotel.categories[0].name === "hotel") {
+        return (
+            <main className="form-main">
+                <div className="form-background"></div>
+                <form onSubmit={handleSubmit(onSubmit)}>
+                    <h2>Manage</h2>
+                    <fieldset disabled={updatingHotel}>
+                        <label>
+                            Name
+                            <input {...register("name")} name="name" placeholder="Name of Accommodation.." defaultValue={hotel.name} />
+                            {errors.name && <FormError>{errors.name.message}</FormError>}
+                        </label>
 
-                    <label>
-                        Address
-                        <input {...register("short_description")} name="short_description" placeholder="Address.." defaultValue={address} />
-                        {errors.short_description && <FormError>{errors.short_description.message}</FormError>}
-                    </label>
+                        <label>
+                            Address
+                            <input {...register("short_description")} name="short_description" placeholder="Address.." defaultValue={address} />
+                            {errors.short_description && <FormError>{errors.short_description.message}</FormError>}
+                        </label>
 
-                    <label>
-                        Price
-                        <input {...register("regular_price")} type="text" name="regular_price" placeholder="Price per night (NOK).." defaultValue={hotel.regular_price} />
-                        {errors.regular_price && <FormError>{errors.regular_price.message}</FormError>}
-                    </label>
+                        <label>
+                            Price
+                            <input {...register("regular_price")} type="text" name="regular_price" placeholder="Price per night (NOK).." defaultValue={hotel.regular_price} />
+                            {errors.regular_price && <FormError>{errors.regular_price.message}</FormError>}
+                        </label>
 
-                    <label>
-                        Image
-                        <input {...register("sku")} name="sku" placeholder="Image URL.." defaultValue={hotel.sku} />
-                        {errors.sku && <FormError>{errors.sku.message}</FormError>}
-                    </label>
+                        <label>
+                            Image
+                            <input {...register("sku")} name="sku" placeholder="Image URL.." defaultValue={hotel.sku} />
+                            {errors.sku && <FormError>{errors.sku.message}</FormError>}
+                        </label>
 
-                    <label>
-                        Description
-                        <textarea {...register("description")} name="description" placeholder="Describe your accommodation.." defaultValue={description} />
-                        {errors.description && <FormError>{errors.description.message}</FormError>}
-                    </label>
+                        <label>
+                            Description
+                            <textarea {...register("description")} name="description" placeholder="Describe your accommodation.." defaultValue={description} />
+                            {errors.description && <FormError>{errors.description.message}</FormError>}
+                        </label>
 
-                    <button className="button button-green" disabled={updatingHotel}>{updatingHotel ? "Updating.." : "Update"}</button>
-                    <hr className="form-hr" />
-                    <DeleteButton id={hotel.id} />
+                        <button className="button button-green" disabled={updatingHotel}>{updatingHotel ? "Updating.." : "Update"}</button>
+                        <hr className="form-hr" />
+                        <DeleteButton id={hotel.id} />
 
-                    {updateError && <div className="invalid-error">{updateError}</div>}
-                </fieldset>
-            </form>
-        </main>
-    )
+                        {updateError && <div className="invalid-error">{updateError}</div>}
+                    </fieldset>
+                </form>
+            </main>
+        )
+    }
+    else {
+        history("/manage");
+    }
+
+
 
 
 };

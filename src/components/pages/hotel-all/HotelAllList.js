@@ -68,10 +68,17 @@ function HotelAllList() {
             <h3>All Accommodations</h3>
             <div className="plate-container">
                 {hotels.map(function (hotel) {
-                    const { id, name, short_description, sku } = hotel;
-                    const { price } = hotel.prices;
 
-                    return <HotelAllItem key={id} id={id} title={name} address={short_description} image={sku} price={price} />
+                    if (hotel.categories[0].name === "hotel") {
+                        const { id, name, short_description, sku } = hotel;
+                        const { price } = hotel.prices;
+
+                        return <HotelAllItem key={id} id={id} title={name} address={short_description} image={sku} price={price} />
+                    }
+                    else {
+                        return null;
+                    }
+
                 })}
             </div>
         </section>

@@ -57,7 +57,12 @@ function TypeDown() {
                         <FontAwesomeIcon icon={faSearch} className="social-link" />
                     </div>
                     {suggestions && suggestions.map((suggestion) => {
-                        return <Link key={suggestion.id} to={`hotel-specific/${suggestion.id}`} className="typedown-link">{suggestion.name}</Link>
+                        if (suggestion.categories[0].name === "hotel") {
+                            return <Link key={suggestion.id} to={`hotel-specific/${suggestion.id}`} className="typedown-link">{suggestion.name}</Link>
+                        }
+                        else {
+                            return null;
+                        }
                     })}
                 </div>
             </label>

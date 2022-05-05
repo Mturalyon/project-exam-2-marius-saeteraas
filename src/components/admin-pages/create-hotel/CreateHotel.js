@@ -33,6 +33,14 @@ function CreateHotel() {
         setSubmitting(true);
         setServerError(null);
 
+        data.categories = [{}];
+
+        data.categories[0].name = "hotel";
+        data.categories[0].slug = "hotel";
+        data.categories[0].id = 19;
+
+        console.log(data);
+
         try {
             const response = await http.post("wc/v3/products", data);
             console.log(response.data);
