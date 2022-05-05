@@ -4,6 +4,8 @@ import useAxios from "../../../hooks/useAxios";
 
 export default function DeleteButton({ id }) {
     const [error, setError] = useState(null);
+    const [alertDelete, setAlertdelete] = useState(false);
+    const [cancelDelete, setCancelDelete] = useState(false);
 
     const http = useAxios();
     const navigate = useNavigate();
@@ -19,8 +21,40 @@ export default function DeleteButton({ id }) {
             setError(error);
         }
     }
+    //
+
+    function cancelDeleteThis() {
+        setCancelDelete(true);
+        setAlertdelete(false);
+    }
+
+    function alertDeleteThis() {
+        setCancelDelete(false);
+        setAlertdelete(true);
+    }
+
+
+    if (cancelDelete) {
+        return (
+            <button className="button button-red delete-button" onClick={alertDeleteThis}>{error ? "Error" : "Delete"}</button>
+        )
+    }
+
+    if (alertDelete) {
+        return (
+            <div className="cancel-container">
+                <p>Are you sure?</p>
+                <div className="cancel-button-container">
+                    <button className="button button-green delete-button" onClick={handleDelete}>Yes</button>
+                    <button className="button button-red delete-button" onClick={cancelDeleteThis}>Cancel</button>
+                </div>
+            </div>
+        )
+    }
+
+    //
 
     return (
-        <button className="button button-red delete-button" onClick={handleDelete}>{error ? "Error" : "Delete"}</button>
+        <button className="button button-red delete-button" onClick={alertDeleteThis}>{error ? "Error" : "Delete"}</button>
     )
 }
