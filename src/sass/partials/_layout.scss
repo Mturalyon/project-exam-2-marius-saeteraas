@@ -292,6 +292,50 @@ header {
     }
 }
 
+//Manage Specific
+.delete-button {
+    margin-top: 0 !important;
+}
+
+.form-hr {
+    margin: 2rem 0;
+}
+
+.update-complete {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .update-icon {
+        color: $color-success-green;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .update-heading {
+        margin-bottom: 2rem;
+    }
+
+    .update-link {
+        display: inline-block;
+        padding: 0.7rem 3rem;
+        background-color: $color-primary;
+        color: $color-white;
+        font-weight: bold;
+        box-shadow: 0 3px 6px #888888c9;
+        position: relative;
+        top: 0;
+        transition: all ease-in-out 0.1s;
+
+        &:hover {
+            top: -5px;
+            background-color: $color-primary-hover;
+            color: $color-white;
+        }
+    }
+}
+
 //Media Queries
 @media only screen and (max-width: 1200px) {
 

@@ -124,6 +124,24 @@ footer {
     }
 }
 
+.button-green {
+    background-color: $color-success-green;
+    color: $color-white;
+
+    &:hover {
+        background-color: #198d34;
+    }
+}
+
+.button-red {
+    background-color: $color-warning-red;
+    color: $color-white;
+
+    &:hover {
+        background-color: #cc1313;
+    }
+}
+
 //Flex box
 .flex-mid {
     display: flex;

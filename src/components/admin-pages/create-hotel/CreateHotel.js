@@ -1,10 +1,14 @@
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import FormError from "../../pages/login/FormError";
 import useAxios from "../../../hooks/useAxios";
+
+import { Link } from "react-router-dom";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleCheck } from '@fortawesome/free-solid-svg-icons';
 
 const schema = yup.object().shape({
     name: yup.string().required("Please enter a name").min(4, "Minimum 4 characters"),
@@ -17,12 +21,12 @@ const schema = yup.object().shape({
 function CreateHotel() {
     const [submitting, setSubmitting] = useState(false);
     const [serverError, setServerError] = useState(null);
+    const [created, setCreated] = useState(false);
 
     const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(schema),
     });
 
-    const navigate = useNavigate();
     const http = useAxios();
 
     async function onSubmit(data) {
@@ -31,9 +35,8 @@ function CreateHotel() {
 
         try {
             const response = await http.post("wc/v3/products", data);
-            console.log(response.data)
-
-            navigate("/manage");
+            console.log(response.data);
+            setCreated(true);
         }
         catch (error) {
             setServerError("There has ben an error: " + error);
@@ -41,6 +44,21 @@ function CreateHotel() {
         finally {
             setSubmitting(false);
         }
+    }
+
+    if (created) {
+        return (
+            <main className="form-main">
+                <div className="form-background"></div>
+                <form>
+                    <div className="update-complete">
+                        <FontAwesomeIcon icon={faCircleCheck} className="update-icon" />
+                        <h2 className="update-heading">Success!</h2>
+                        <Link to="/manage" className="update-link">Back</Link>
+                    </div>
+                </form>
+            </main>
+        )
     }
 
     return (
@@ -79,7 +97,7 @@ function CreateHotel() {
                         {errors.description && <FormError>{errors.description.message}</FormError>}
                     </label>
 
-                    <button className="button">{submitting ? "Creating.." : "Create"}</button>
+                    <button className="button button-green">{submitting ? "Creating.." : "Create"}</button>
                     {serverError && <div className="invalid-error">{serverError}</div>}
                 </fieldset>
             </form>
