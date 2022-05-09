@@ -353,6 +353,42 @@ header {
     }
 }
 
+//Message Specific
+.message-specific_container {
+    div {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+        margin-bottom: 0;
+    }
+
+    h2 {
+        color: $color-text-grey;
+        font-size: 1.2rem;
+    }
+
+    .message-specific_description {
+        font-size: 0.9rem;
+        color: rgb(37, 37, 37);
+    }
+
+    hr {
+        margin: 0.5rem 0;
+        color: $color-primary;
+    }
+
+    a {
+        margin-bottom: 0;
+        margin-top: 3rem;
+        font-size: 1rem;
+        padding: 0.8rem 3rem;
+    }
+}
+
 //Media Queries
 @media only screen and (max-width: 1200px) {
 

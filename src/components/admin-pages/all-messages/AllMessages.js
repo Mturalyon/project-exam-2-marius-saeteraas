@@ -1,5 +1,14 @@
+import MessageList from "./MessageList";
+
 function AllMessages() {
-    return <div>All Messages</div>
+    return (
+        <main>
+            <div className="wrapper">
+                <MessageList />
+            </div>
+        </main>
+    )
+
 };
 
 export default AllMessages;

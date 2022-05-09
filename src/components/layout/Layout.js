@@ -14,17 +14,20 @@ import { useContext } from "react";
 //Page
 import Home from "../pages/home/Home";
 import Contact from "../pages/contact/Contact";
-import HotelSpecific from "../pages/hotel-specific/HotelSpecific";
 import Login from "../pages/login/Login";
 import HotelAll from "../pages/hotel-all/HotelAll";
 import Enquiry from "../pages/enquiry/Enquiry";
+
+import HotelSpecific from "../pages/hotel-specific/HotelSpecific";
 //Admin Page
 import Admin from "../admin-pages/admin/Admin";
 import ManageHotels from "../admin-pages/manage-hotels/ManageHotels";
 import CreateHotel from "../admin-pages/create-hotel/CreateHotel";
 import AllEnquiries from "../admin-pages/all-enquiries/AllEnquiries";
 import AllMessages from "../admin-pages/all-messages/AllMessages";
+
 import ManageSpecific from "../admin-pages/manage-specific/ManageSpecific";
+import MessageSpecific from "../admin-pages/message-specific/MessageSpecific";
 //Component
 import Footer from "./Footer";
 
@@ -91,6 +94,7 @@ function Layout() {
                 <Route path="/all-messages" element={<AllMessages />} />
 
                 <Route path="/manage-specific/:id" element={<ManageSpecific />} />
+                <Route path="/message-specific/:id" element={<MessageSpecific />} />
             </Routes>
             <Footer />
         </>
