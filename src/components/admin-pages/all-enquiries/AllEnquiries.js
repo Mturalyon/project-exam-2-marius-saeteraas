@@ -1,5 +1,13 @@
+import EnquiryList from "./EnquiryList";
+
 function AllEnquiries() {
-    return <div>All Enquiries</div>
+    return (
+        <main>
+            <div className="wrapper">
+                <EnquiryList />
+            </div>
+        </main>
+    )
 };
 
 export default AllEnquiries;

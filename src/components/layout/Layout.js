@@ -28,6 +28,7 @@ import AllMessages from "../admin-pages/all-messages/AllMessages";
 
 import ManageSpecific from "../admin-pages/manage-specific/ManageSpecific";
 import MessageSpecific from "../admin-pages/message-specific/MessageSpecific";
+import EnquirySpecific from "../admin-pages/enquiry-specific/EnquirySpecific";
 //Component
 import Footer from "./Footer";
 
@@ -95,6 +96,7 @@ function Layout() {
 
                 <Route path="/manage-specific/:id" element={<ManageSpecific />} />
                 <Route path="/message-specific/:id" element={<MessageSpecific />} />
+                <Route path="/enquiry-specific/:id" element={<EnquirySpecific />} />
             </Routes>
             <Footer />
         </>
