@@ -1,8 +1,8 @@
-import { API } from "../../../constants/api";
+import { ENQ_API } from "../../../constants/api";
 import { useState, useEffect } from "react";
 import EnquiryItem from "./EnquiryItem";
 
-const url = API + "/?per_page=100";
+const url = ENQ_API + "/?per_page=100";
 
 function EnquiryList() {
     const [enquiries, setEnquiries] = useState([]);
@@ -71,13 +71,7 @@ function EnquiryList() {
             <div className="plate-container">
                 {enquiries.map(function (enquiry) {
 
-                    if (enquiry.categories[0].name === "enquiry") {
-                        const { id, name, short_description } = enquiry;
-                        return <EnquiryItem key={id} id={id} title={name} address={short_description} />
-                    }
-                    else {
-                        return null;
-                    }
+                    return <EnquiryItem key={enquiry.id} id={enquiry.id} title={enquiry.title.rendered} arrival={enquiry.acf.arrival_date} departure={enquiry.acf.departure_date} />
 
                 })}
             </div>
