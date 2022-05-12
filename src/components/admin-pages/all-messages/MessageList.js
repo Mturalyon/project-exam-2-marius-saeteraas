@@ -2,6 +2,8 @@ import { API } from "../../../constants/api";
 import { useState, useEffect } from "react";
 import MessageItem from "./MessageItem";
 
+const url = API + "/?per_page=100";
+
 function MessageList() {
     const [messages, setMessages] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -10,7 +12,7 @@ function MessageList() {
     useEffect(function () {
         async function fetchData() {
             try {
-                const response = await fetch(API);
+                const response = await fetch(url);
 
                 if (response.ok) {
                     const json = await response.json();

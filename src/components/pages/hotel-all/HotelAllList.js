@@ -2,6 +2,8 @@ import { API } from "../../../constants/api";
 import { useState, useEffect } from "react";
 import HotelAllItem from "./HotelAllItem";
 
+const url = API + "/?per_page=100";
+
 function HotelAllList() {
     const [hotels, setHotels] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -10,7 +12,7 @@ function HotelAllList() {
     useEffect(function () {
         async function fetchData() {
             try {
-                const response = await fetch(API);
+                const response = await fetch(url);
 
                 if (response.ok) {
                     const json = await response.json();

@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import HotelItem from "./HotelItem";
 import { Link } from "react-router-dom";
 
+const url = API + "/?per_page=100";
+
 function HotelList() {
     const [hotels, setHotels] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -11,7 +13,7 @@ function HotelList() {
     useEffect(function () {
         async function fetchData() {
             try {
-                const response = await fetch(API);
+                const response = await fetch(url);
 
                 if (response.ok) {
                     const json = await response.json();

@@ -5,6 +5,8 @@ import { API } from "../../../constants/api";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
+const url = API + "/?per_page=100";
+
 function TypeDown() {
     const [hotels, setHotels] = useState([]);
     const [text, setText] = useState("");
@@ -13,7 +15,7 @@ function TypeDown() {
     useEffect(function () {
         async function fetchData() {
             try {
-                const response = await fetch(API);
+                const response = await fetch(url);
 
                 if (response.ok) {
                     const json = await response.json();

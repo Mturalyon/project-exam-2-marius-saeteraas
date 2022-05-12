@@ -2,6 +2,8 @@ import { API } from "../../../constants/api";
 import { useState, useEffect } from "react";
 import EnquiryItem from "./EnquiryItem";
 
+const url = API + "/?per_page=100";
+
 function EnquiryList() {
     const [enquiries, setEnquiries] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -10,12 +12,11 @@ function EnquiryList() {
     useEffect(function () {
         async function fetchData() {
             try {
-                const response = await fetch(API);
+                const response = await fetch(url);
 
                 if (response.ok) {
                     const json = await response.json();
                     setEnquiries(json);
-                    console.log(json)
                 }
                 else {
                     setError("An error has occured.");
