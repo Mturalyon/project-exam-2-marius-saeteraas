@@ -389,6 +389,40 @@ header {
     }
 }
 
+//Enquiry Form
+.date-container {
+    display: flex;
+    justify-content: space-between;
+
+    label {
+        width: 47%;
+    }
+}
+
+.enquiry_update-complete {
+    text-align: center;
+
+    h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+
+    .enquiry_hotel-name {
+        font-weight: bold;
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    h2 {
+        margin-bottom: 1rem;
+        font-size: 1.7rem;
+    }
+
+    .enquiry_assurance {
+        margin-bottom: 3rem;
+    }
+}
+
 //Media Queries
 @media only screen and (max-width: 1200px) {
 
@@ -515,6 +549,15 @@ header {
     .manage-plate {
         .manage-info {
             padding: 0 1.5rem;
+        }
+    }
+
+    //Enquiry Form
+    .date-container {
+        flex-direction: column;
+
+        label {
+            width: 100%;
         }
     }
 
