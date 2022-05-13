@@ -187,7 +187,7 @@ header {
     }
 
     img {
-        width: 200px;
+        min-width: 200px;
         height: 150px;
         object-fit: cover;
         box-shadow: 0 4px 8px #00000094;
@@ -253,6 +253,7 @@ header {
     img {
         margin-right: 1rem;
         height: 300px;
+        min-width: 400px;
         object-fit: cover;
         box-shadow: 0 4px 8px #00000094;
     }
@@ -423,6 +424,98 @@ header {
     }
 }
 
+//Enquiry Specific
+.enquiry-specific_form {
+    .enquiry-specific_container {
+        display: flex;
+
+        &>* {
+            flex: 1;
+        }
+
+        .enquiry-specific_hotel {
+            font-weight: bold;
+            color: $color-primary;
+        }
+
+    }
+
+    p#enquiry_message {
+        font-weight: bold;
+        margin-top: 2rem;
+    }
+
+    .enquiry-specific_message {
+        margin-bottom: 2rem;
+    }
+
+    a {
+        margin-bottom: 0;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+//Admin Home
+
+.admin-section {
+    padding: 0;
+    margin: 3rem 0;
+
+    .admin_header-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        a {
+            padding: 0;
+            background-color: transparent;
+            box-shadow: none;
+            color: $color-primary;
+            margin: 0;
+
+            &:hover {
+                background-color: transparent;
+                text-decoration: underline;
+                top: 0;
+                color: $color-primary;
+            }
+        }
+
+        h3 {
+            margin: 0;
+        }
+    }
+}
+
+.admin-nav {
+    padding-top: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    p {
+        font-weight: bold;
+        color: $color-text-grey;
+        font-size: 1.1rem;
+    }
+
+    ul {
+        display: flex;
+        border-bottom: 1px solid rgb(228, 228, 228);
+    }
+
+    ul a {
+        margin: 0 0.5rem;
+        color: $color-text-grey;
+
+        &:hover {
+            color: $color-primary;
+        }
+    }
+}
+
+
 //Media Queries
 @media only screen and (max-width: 1200px) {
 
@@ -483,7 +576,7 @@ header {
         }
 
         img {
-            width: 250px;
+            min-width: 100%;
             margin-right: 0;
             margin-bottom: 1rem;
         }
@@ -505,6 +598,20 @@ header {
             margin-right: 0;
             margin-bottom: 1rem;
         }
+    }
+
+    //Admin Home
+    .admin_header-container {
+        flex-direction: column;
+        margin-bottom: 1rem;
+
+        h3 {
+            padding-bottom: 1rem;
+        }
+    }
+
+    .admin-nav {
+        flex-direction: column;
     }
 }
 
@@ -537,16 +644,17 @@ header {
         }
     }
 
-    //Hotel All
-    .plate {
+    //Hotel Specific
+    .hotel-specific-main {
 
         img {
-            width: 220px;
+            min-width: 100%;
         }
     }
 
     //Manage Hotels
     .manage-plate {
+
         .manage-info {
             padding: 0 1.5rem;
         }

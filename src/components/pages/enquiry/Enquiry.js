@@ -96,7 +96,6 @@ function Enquiry() {
 
         try {
             await axios.post(ENQ_API, enquiry, { headers });
-            console.log(enquiry);
             setUpdated(true);
         }
         catch (error) {
