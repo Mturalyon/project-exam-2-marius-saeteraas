@@ -19,7 +19,7 @@ function TypeDown() {
 
                 if (response.ok) {
                     const json = await response.json();
-                    setHotels(json)
+                    setHotels(json);
                 }
                 else {
                     console.log("Woops! Something seems to be wrong :(");

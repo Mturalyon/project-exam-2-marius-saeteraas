@@ -33,7 +33,7 @@ function HotelSpecific() {
                 }
             }
             catch (error) {
-                setError("An error has occured.")
+                setError("An error has occured.");
             }
             finally {
                 setLoading(false);

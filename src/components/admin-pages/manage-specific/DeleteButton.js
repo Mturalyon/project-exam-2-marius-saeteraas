@@ -20,7 +20,7 @@ export default function DeleteButton({ id }) {
         catch (error) {
             setError(error);
         }
-    }
+    };
     //
 
     function cancelDeleteThis() {
@@ -38,7 +38,7 @@ export default function DeleteButton({ id }) {
         return (
             <button className="button button-red delete-button" onClick={alertDeleteThis}>{error ? "Error" : "Delete"}</button>
         )
-    };
+    }
 
     if (alertDelete) {
         return (
@@ -50,7 +50,7 @@ export default function DeleteButton({ id }) {
                 </div>
             </div>
         )
-    };
+    }
 
     //
 

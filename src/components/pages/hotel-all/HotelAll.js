@@ -8,6 +8,6 @@ function HotelAll() {
             </div>
         </main>
     )
-}
+};
 
 export default HotelAll;

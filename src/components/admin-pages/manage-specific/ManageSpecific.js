@@ -163,10 +163,6 @@ function ManageSpecific() {
     else {
         history("/manage");
     }
-
-
-
-
 };
 
 export default ManageSpecific;

@@ -63,7 +63,7 @@ function ManageList() {
 
             </>
         )
-    };
+    }
 
     return (
         <section className="home-hotel-section">

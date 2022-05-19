@@ -8,6 +8,6 @@ function ManageHotels() {
             </div>
         </main>
     )
-}
+};
 
 export default ManageHotels;

@@ -205,10 +205,6 @@ function Enquiry() {
     else {
         history("/hotel-all");
     }
-
-
-
-
 };
 
 export default Enquiry;

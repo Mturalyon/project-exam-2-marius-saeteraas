@@ -33,7 +33,7 @@ function MessageSpecific() {
                 }
             }
             catch (error) {
-                setError("An error has occured.")
+                setError("An error has occured.");
             }
             finally {
                 setLoading(false);
@@ -84,7 +84,6 @@ function MessageSpecific() {
         history(0);
     }
 
-
-}
+};
 
 export default MessageSpecific;

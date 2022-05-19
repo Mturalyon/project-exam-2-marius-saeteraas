@@ -36,12 +36,12 @@ import Footer from "./Footer";
 
 function Layout() {
     const [auth, setAuth] = useContext(AuthContext);
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     function logout() {
         setAuth(null);
-        navigate("/")
-        navigate(0)
+        navigate("/");
+        navigate(0);
     };
 
 

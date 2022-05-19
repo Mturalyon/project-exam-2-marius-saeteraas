@@ -1,6 +1,4 @@
-import {
-    Link
-} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter, faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';

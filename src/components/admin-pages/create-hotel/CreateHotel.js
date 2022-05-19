@@ -39,11 +39,8 @@ function CreateHotel() {
         data.categories[0].slug = "hotel";
         data.categories[0].id = 19;
 
-        console.log(data);
-
         try {
-            const response = await http.post("wc/v3/products", data);
-            console.log(response.data);
+            await http.post("wc/v3/products", data);
             setCreated(true);
         }
         catch (error) {

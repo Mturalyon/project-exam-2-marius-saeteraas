@@ -8,7 +8,7 @@ function CreateToken() {
 
     const headers = {
         "Content-Type": "application/json",
-    }
+    };
     const data = {
         "username": "marius.turalyon@outlook.com",
         "password": "megaklump123"
@@ -23,7 +23,7 @@ function CreateToken() {
         }
         catch (error) {
             console.log(error);
-        };
+        }
     }
     getToken();
 

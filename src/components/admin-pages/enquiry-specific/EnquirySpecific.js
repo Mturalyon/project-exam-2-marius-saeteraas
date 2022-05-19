@@ -91,6 +91,6 @@ function EnquirySpecific() {
             </form>
         </main>
     )
-}
+};
 
 export default EnquirySpecific;
