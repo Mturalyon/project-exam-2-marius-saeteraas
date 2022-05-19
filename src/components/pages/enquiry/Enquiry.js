@@ -54,6 +54,7 @@ function Enquiry() {
                 try {
                     const response = await axios.get(url);
                     setHotel(response.data);
+                    document.title = `Holidaze | ${response.data.name}`;
                 }
                 catch (error) {
                     setFetchError("An error has occured");

@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import FormError from "../../pages/login/FormError";
@@ -21,6 +21,12 @@ const schema = yup.object().shape({
 });
 
 function Contact() {
+
+    useEffect(() => {
+        document.title = "Holidaze | Contact";
+    }, []);
+
+
     const [submitting, setSubmitting] = useState(false);
     const [serverError, setServerError] = useState(null);
     const [created, setCreated] = useState(false);

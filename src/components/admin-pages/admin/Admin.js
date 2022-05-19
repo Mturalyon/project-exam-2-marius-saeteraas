@@ -1,9 +1,14 @@
 import AdminMessages from "./AdminMessages";
 import AdminEnquiries from "./AdminEnquiries";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 function Admin() {
     let user = JSON.parse(window.localStorage.getItem("auth"));
+
+    useEffect(() => {
+        document.title = `Holidaze | ${user.email}`;
+    }, []);
 
     return (
         <main>

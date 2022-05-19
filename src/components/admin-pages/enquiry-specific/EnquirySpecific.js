@@ -27,9 +27,11 @@ function EnquirySpecific() {
                 if (response.ok) {
                     const json = await response.json();
                     setEnquiry(json);
+                    document.title = `Holidaze | Enquiry - ${json.title.rendered}`;
                 }
                 else {
                     setError("An error has occured.");
+                    document.title = `Holidaze | No enquiry found`;
                 }
             }
             catch (error) {

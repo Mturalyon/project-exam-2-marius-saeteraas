@@ -27,9 +27,11 @@ function HotelSpecific() {
                 if (response.ok) {
                     const json = await response.json();
                     setHotel(json);
+                    document.title = `Holidaze | ${json.name}`;
                 }
                 else {
                     setError("An error has occured.");
+                    document.title = `Holidaze | Room not found`;
                 }
             }
             catch (error) {

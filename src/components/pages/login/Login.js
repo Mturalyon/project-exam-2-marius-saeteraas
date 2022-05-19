@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import axios from "axios";
 import { TOKEN_API } from "../../../constants/api";
 import FormError from "./FormError";
@@ -15,6 +15,12 @@ const schema = yup.object().shape({
 });
 
 function Login() {
+
+    useEffect(() => {
+        document.title = "Holidaze | Login";
+    }, []);
+
+
     const [submitting, setSubmitting] = useState(false);
     const [loginError, setLoginError] = useState(null);
 

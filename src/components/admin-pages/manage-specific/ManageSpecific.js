@@ -50,6 +50,7 @@ function ManageSpecific() {
                 try {
                     const response = await http.get(url);
                     setHotel(response.data);
+                    document.title = `Holidaze | Manage - ${response.data.name}`;
                 }
                 catch (error) {
                     setFetchError("An error has occured");

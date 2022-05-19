@@ -27,9 +27,11 @@ function MessageSpecific() {
                 if (response.ok) {
                     const json = await response.json();
                     setMessage(json);
+                    document.title = `Holidaze | Message - ${json.name}`;
                 }
                 else {
                     setError("An error has occured.");
+                    document.title = `Holidaze | Message not found`;
                 }
             }
             catch (error) {
