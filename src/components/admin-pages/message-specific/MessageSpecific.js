@@ -2,8 +2,12 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { API } from "../../../constants/api";
+import RedirectPage from "../redirectPage";
 
 function MessageSpecific() {
+
+    RedirectPage();
+
     const [message, setMessage] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);

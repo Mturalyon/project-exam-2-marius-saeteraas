@@ -2,8 +2,12 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { ENQ_API } from "../../../constants/api";
+import RedirectPage from "../redirectPage";
 
 function EnquirySpecific() {
+
+    RedirectPage();
+
     const [enquiry, setEnquiry] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);

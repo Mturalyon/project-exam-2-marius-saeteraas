@@ -1,7 +1,10 @@
 import MessageList from "./MessageList";
 import { useEffect } from "react";
+import RedirectPage from "../redirectPage";
 
 function AllMessages() {
+
+    RedirectPage();
 
     useEffect(() => {
         document.title = `Holidaze | Messages`;

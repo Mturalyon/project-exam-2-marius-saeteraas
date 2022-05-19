@@ -12,6 +12,8 @@ import DeleteButton from "./DeleteButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleCheck } from '@fortawesome/free-solid-svg-icons';
 
+import RedirectPage from "../redirectPage";
+
 const schema = yup.object().shape({
     name: yup.string().required("Please enter a name").min(4, "Minimum 4 characters"),
     short_description: yup.string().required("Please enter an address").min(4, "Minimum 4 characters"),
@@ -21,6 +23,9 @@ const schema = yup.object().shape({
 });
 
 function ManageSpecific() {
+
+    RedirectPage();
+
     const [hotel, setHotel] = useState(null);
     const [updated, setUpdated] = useState(false);
     const [fetchingHotel, setFetchingHotel] = useState(true);

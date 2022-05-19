@@ -10,6 +10,8 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleCheck } from '@fortawesome/free-solid-svg-icons';
 
+import RedirectPage from "../redirectPage";
+
 const schema = yup.object().shape({
     name: yup.string().required("Please enter a name").min(4, "Minimum 4 characters"),
     short_description: yup.string().required("Please enter an address").min(4, "Minimum 4 characters"),
@@ -19,6 +21,8 @@ const schema = yup.object().shape({
 });
 
 function CreateHotel() {
+
+    RedirectPage();
 
     useEffect(() => {
         document.title = `Holidaze | Create`;
