@@ -93,6 +93,8 @@ function HotelList() {
                     }
                 })}
             </div>
+
+
             <div className="flex-mid">
                 <Link to={`/hotel-all`} className="button">
                     See More
