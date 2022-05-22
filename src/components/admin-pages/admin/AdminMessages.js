@@ -2,6 +2,7 @@ import { API } from "../../../constants/api";
 import { useState, useEffect } from "react";
 import MessageItem from "../all-messages/MessageItem";
 import { Link } from "react-router-dom";
+import LoopControl from "../../pages/home/LoopControl";
 
 const url = API + "/?per_page=100";
 
@@ -72,6 +73,8 @@ function AdminMessages() {
         )
     };
 
+    const loopedMessages = LoopControl(messages, "message");
+
     return (
         <section className="home-hotel-section admin-section">
             <div className="admin_header-container">
@@ -80,15 +83,10 @@ function AdminMessages() {
             </div>
 
             <div className="plate-container">
-                {messages.map(function (message) {
+                {loopedMessages.map(function (message) {
 
-                    if (message.categories[0].name === "message") {
-                        const { id, sku, short_description } = message;
-                        return <MessageItem key={id} id={id} title={sku} address={short_description} />
-                    }
-                    else {
-                        return null;
-                    }
+                    const { id, sku, short_description } = message;
+                    return <MessageItem key={id} id={id} title={sku} address={short_description} />
 
                 })}
             </div>

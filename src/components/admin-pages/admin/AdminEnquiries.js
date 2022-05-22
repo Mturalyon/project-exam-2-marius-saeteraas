@@ -2,6 +2,7 @@ import { ENQ_API } from "../../../constants/api";
 import { useState, useEffect } from "react";
 import EnquiryItem from "../all-enquiries/EnquiryItem";
 import { Link } from "react-router-dom";
+import EnquiryLoop from "./EnquiryLoop";
 
 const url = ENQ_API + "/?per_page=100";
 
@@ -72,6 +73,8 @@ function AdminEnquiries() {
         )
     };
 
+    const loopedEnquiries = EnquiryLoop(enquiries);
+
     return (
         <section className="home-hotel-section admin-section">
             <div className="admin_header-container">
@@ -79,7 +82,7 @@ function AdminEnquiries() {
                 <Link to={`/all-enquiries`} className="plate manage-plate">See All</Link>
             </div>
             <div className="plate-container">
-                {enquiries.map(function (enquiry) {
+                {loopedEnquiries.map(function (enquiry) {
 
                     return <EnquiryItem key={enquiry.id} id={enquiry.id} title={enquiry.title.rendered} arrival={enquiry.acf.arrival_date} departure={enquiry.acf.departure_date} />
 

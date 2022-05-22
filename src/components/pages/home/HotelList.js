@@ -2,6 +2,7 @@ import { API } from "../../../constants/api";
 import { useState, useEffect } from "react";
 import HotelItem from "./HotelItem";
 import { Link } from "react-router-dom";
+import LoopControl from "./LoopControl";
 
 const url = API + "/?per_page=100";
 
@@ -76,24 +77,21 @@ function HotelList() {
         )
     };
 
+    const loopedHotels = LoopControl(hotels, "hotel");
+
     return (
         <section className="home-hotel-section">
             <h3>Accommodations</h3>
+
             <div className="card-container">
-                {hotels.map(function (hotel) {
-                    if (hotel.categories[0].name === "hotel") {
+                {loopedHotels.map(function (hotel) {
 
-                        const { id, name, short_description, sku } = hotel;
-                        const { price } = hotel.prices;
-                        return <HotelItem key={id} id={id} title={name} address={short_description} image={sku} price={price} />
+                    const { id, name, short_description, sku } = hotel;
+                    const { price } = hotel.prices;
+                    return <HotelItem key={id} id={id} title={name} address={short_description} image={sku} price={price} />
 
-                    }
-                    else {
-                        return null;
-                    }
                 })}
             </div>
-
 
             <div className="flex-mid">
                 <Link to={`/hotel-all`} className="button">
