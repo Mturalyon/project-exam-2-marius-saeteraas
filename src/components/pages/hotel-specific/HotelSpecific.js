@@ -86,6 +86,7 @@ function HotelSpecific() {
                         </div>
                     </div>
                 </main>
+                <button onClick={() => history(-1)} className="back-btn">Back</button>
             </div>
         )
     }

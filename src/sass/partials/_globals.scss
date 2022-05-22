@@ -27,20 +27,20 @@ a {
 
 //Navigation
 .navbar {
-    background-color: $color-white !important;
+    background-color: $color-white  !important;
     position: sticky;
     top: 0;
     width: 100%;
     z-index: 1;
 
     .logo {
-        color: $color-primary !important;
+        color: $color-primary  !important;
         font-family: $font-secondary;
         font-weight: bold;
     }
 
     .nav-link:hover {
-        color: $color-primary !important;
+        color: $color-primary  !important;
         text-decoration: underline;
     }
 
@@ -139,6 +139,22 @@ footer {
 
     &:hover {
         background-color: #cc1313;
+    }
+}
+
+.back-btn {
+    border: 2px solid $color-primary;
+    background-color: $color-white;
+    padding: 0.5rem 1.3rem;
+    border-radius: 5px;
+    font-weight: bold;
+    color: $color-primary;
+    margin-bottom: 2rem;
+    box-shadow: 0 3px 6px #888888c9;
+
+    &:hover {
+        background-color: $color-primary;
+        color: $color-white;
     }
 }
 
