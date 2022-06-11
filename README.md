@@ -4,11 +4,13 @@ Project Exam 2
 ![screencapture-project-exam-2-marius-saeteraas-netlify-app-2022-06-11-18_10_00](https://user-images.githubusercontent.com/71336754/173196116-16e42a46-5980-4845-ac25-33a30ed049e5.png)
 
 
-A simple overview of the use/purpose of the project.
+This project is about creating a booking website for tourists in the area of Bergen. Where there would a user side and an administrative side. We were supposed to chose between using React or NextJS to build it on.
 
 ## Description
 
-Add a more detailed description of what your project entails and set out to do.
+On the user side you will be able to browse through the availible accommodations. Furthermore, you can click it and see extensive information about the accommodation. You will also be given an option to book, if you find the item to your liking. If the user decides to book, they will be redirected to an enquiry page, where extensive information will have to be provided through a form with validations. On booking, the data will be sent to a database and can be accessed and responded to by the admin side of the website. User can also send messages through a contact form.
+
+
 
 You can add some bullet points if you'd like to:
 
