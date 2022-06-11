@@ -1,3 +1,5 @@
+username: marius.turalyon@outlook.com password: megaklump123
+
 # Holidaze
 Project Exam 2
 
@@ -10,7 +12,7 @@ This project is about creating a booking website for tourists in the area of Ber
 
 On the user side you will be able to browse through the availible accommodations. Furthermore, you can click it and see extensive information about the accommodation. You will also be given an option to book, if you find the item to your liking. If the user decides to book, they will be redirected to an enquiry page, where extensive information will have to be provided through a form with validations. On booking, the data will be sent to a database and can be accessed and responded to by the admin side of the website. User can also send messages through a contact form.
 
-
+The admin can login using the correct credentials which is provided on top of this readme.md file. On login, a jwt will be generated and stored in the localstorage. Using this jwt, the admin will be directed to the admin page, and additional options will be provided in the navigation menu. Here the admin can view messages and enquiries. They can also create/ edit or delete accommodations. Lastly, the admin have an option to logout. Clearing the localstorage and directed to the main page. The admin section in the navigation will also be cleared.
 
 You can add some bullet points if you'd like to:
 
