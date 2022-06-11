@@ -36,10 +36,14 @@ Admin Pages:
 
 ## Built With
 
-You can list a the tech stack that you've used over here
-
 - [React.js](https://reactjs.org/)
-- [Bootstrap](https://getbootstrap.com)
+- [React Bootstrap](https://react-bootstrap.github.io/)
+- [Sass](https://sass-lang.com/)
+- [Axios](https://axios-http.com/docs/intro)
+- [React Router](https://reactrouter.com/)
+- [React Hook Form](https://react-hook-form.com/)
+- [Yup Validation](https://www.npmjs.com/package/yup)
+- [FortAwesome](https://fortawesome.com/)
 
 ## Getting Started
 
