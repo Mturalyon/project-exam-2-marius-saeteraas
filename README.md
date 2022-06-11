@@ -14,11 +14,25 @@ On the user side you will be able to browse through the availible accommodations
 
 The admin can login using the correct credentials which is provided on top of this readme.md file. On login, a jwt will be generated and stored in the localstorage. Using this jwt, the admin will be directed to the admin page, and additional options will be provided in the navigation menu. Here the admin can view messages and enquiries. They can also create/ edit or delete accommodations. Lastly, the admin have an option to logout. Clearing the localstorage and directed to the main page. The admin section in the navigation will also be cleared.
 
-You can add some bullet points if you'd like to:
+User Pages:
 
-- List item 1
-- List item 2
-- List item 3
+- Home
+- All Accommodations
+- Specific Accommodation
+- Contact
+- Enquiry
+- Login
+
+Admin Pages:
+
+- Admin
+- All Enquiries
+- All Messages
+- Enquiry Specific
+- Message Specific
+- Manage All Accommodations
+- Manage Accommodation
+- Create Accommodation
 
 ## Built With
 
